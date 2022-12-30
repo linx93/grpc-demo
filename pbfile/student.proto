@@ -1,0 +1,40 @@
+//指定当前proto版本
+syntax = "proto3";
+
+//option go_package="path;name"; path表示生成go文件的存放位置，会自动生存目录,name表示生成的go文件所属的包名
+option go_package="../service";
+
+//指定等会儿文件生成出来的package位置
+package service;
+
+//学生
+message Student{
+  string username =1;
+  uint32 age = 2;
+
+  Class class = 3;
+
+  repeated Teacher teachers=4;
+
+  optional string password = 5;
+  repeated string addresses = 6;
+
+  uint32 gender=7;
+
+
+}
+
+//班级
+message Class{
+  string className=1;
+  string classCode=2;
+}
+
+//老师
+message Teacher{
+  string TeacherName=1;
+  //教师编号
+  string TeacherCode=2;
+  uint32 age=3;
+  uint32 gender=4;
+}
