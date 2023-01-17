@@ -14,9 +14,11 @@ message Student{
 
   Class class = 3;
 
+  //repeated 生成的是切片
   repeated Teacher teachers=4;
 
-  optional string password = 5;
+  //optional 生成的是指针类型
+  optional  string password = 5;
   repeated string addresses = 6;
 
   uint32 gender=7;
